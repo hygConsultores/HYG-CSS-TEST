@@ -8,16 +8,16 @@
     --color-text: #333;
     --color-light: #fff;
     --color-dark: #34495e;
-  
+
     /* Espaciado */
     --spacing-small: 10px;
     --spacing-medium: 20px;
     --spacing-large: 40px;
-  
+
     /* Bordes */
     --border-radius: 8px;
   }
-  
+
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -26,11 +26,11 @@
     background-color: var(--color-background);
     color: var(--color-text);
   }
-  
+
   h1, h2, h3 {
     color: var(--color-dark);
   }
-  
+
   section {
     margin-bottom: var(--spacing-large);
     padding: var(--spacing-medium);
@@ -38,7 +38,7 @@
     border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* 1. Grid vs Flexbox */
   .flex-container {
     display: flex;
@@ -47,7 +47,7 @@
     padding: var(--spacing-small);
     border-radius: var(--border-radius);
   }
-  
+
   .flex-item {
     background-color: var(--color-primary);
     color: var(--color-light);
@@ -57,7 +57,7 @@
     text-align: center;
     flex: 1;
   }
-  
+
   .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -66,7 +66,7 @@
     padding: var(--spacing-small);
     border-radius: var(--border-radius);
   }
-  
+
   .grid-item {
     background-color: var(--color-accent);
     color: var(--color-light);
@@ -74,14 +74,14 @@
     text-align: center;
     border-radius: var(--border-radius);
   }
-  
+
 
   /* 2. Uso de <section> */
   .section-usage {
     background-color: var(--color-secondary);
     color: var(--color-light);
   }
-  
+
 
   /* 3. Variables CSS */
   .variable-example {
@@ -91,17 +91,17 @@
     border-radius: var(--border-radius);
   }
 
-  
+
   /* 4. Selectores avanzados */
   .parent > p {
     color: var(--color-accent);
   }
-  
+
   .parent p {
     font-style: italic;
   }
 
-  
+
   /* 5. Animaciones con @keyframes */
   @keyframes slide-in {
     0% {
@@ -120,14 +120,14 @@
       transform: translateX(100%) rotate(180deg);
     }
   }
-  
+
   .animated-box {
     width: 100px;
     height: 100px;
     background-color: var(--color-secondary);
     animation: slide-in 3s linear infinite;
   }
-  
+
 
   /* 6. Pseudoelementos ::before y ::after */
   .pseudo-example {
@@ -137,7 +137,7 @@
     color: var(--color-light);
     border-radius: var(--border-radius);
   }
-  
+
   .pseudo-example::before {
     content: "★";
     position: absolute;
@@ -145,7 +145,7 @@
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
   .pseudo-example::after {
     content: "";
     position: absolute;
@@ -155,3 +155,55 @@
     height: 4px;
     background-color: var(--color-accent);
   }
+/* 7. Control de Overflows */
+.overflow-box {
+  width: 200px;
+  height: 100px;
+  border: 2px solid var(--color-primary);
+  padding: var(--spacing-small);
+  overflow: auto; /* Controla el desbordamiento */
+}
+
+/* 8. Responsive Design */
+.responsive-box {
+  width: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-medium);
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  text-align: center;
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 768px) {
+  .responsive-box {
+    background-color: var(--color-accent);
+  }
+}
+
+
+/* 9. Clases Jerarquizadas */
+.parent-class .child-class {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+
+/* 10. Especificidad de CSS */
+#specific-id {
+  color: var(--color-primary);
+}
+
+.specific-class {
+  color: var(--color-secondary);
+}
+
+
+/* 11. Estándar de Nombramiento (BEM) */
+.block__element--modifier {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius);
+}
