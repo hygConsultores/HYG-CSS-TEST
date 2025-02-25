@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Curso de CSS: Conceptos </h1>
+  </header>
+
+  <!-- Sección 1: Grid vs Flexbox -->
+  <section class="section-grid-flex">
+    <h2>1. Cuándo usar Grid o Flexbox</h2>
+    <div class="flex-example">
+      <h3>Flexbox</h3>
+      <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+    <div class="grid-example">
+      <h3>Grid</h3>
+      <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Uso de <section> -->
+  <section class="section-usage">
+    <h2>2. Uso de &lt;section&gt;</h2>
+    <p>Esta es una sección de ejemplo con estilos personalizados.</p>
+  </section>
+
+  <!-- Sección 3: Variables CSS -->
+  <section class="section-variables">
+    <h2>3. Variables CSS</h2>
+    <div class="variable-example">
+      <p>Este texto usa colores y espaciado definidos con variables CSS.</p>
+    </div>
+  </section>
+
+  <!-- Sección 4: Selectores avanzados -->
+  <section class="section-selectors">
+    <h2>4. Selectores</h2>
+    <div class="parent">
+      <p>Este es un hijo directo.</p>
+      <div>
+        <p>Este es un descendiente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5: Animaciones con @keyframes -->
+  <section class="section-animations">
+    <h2>5. Animaciones con @keyframes</h2>
+    <div class="animated-box"></div>
+  </section>
+
+  <!-- Sección 6: Pseudoelementos ::before y ::after -->
+  <section class="section-pseudo">
+    <h2>6. Pseudoelementos ::before y ::after</h2>
+    <div class="pseudo-example">
+      <p>Este es un ejemplo con pseudoelementos.</p>
+    </div>
+  </section>
+  <section>
+        <!-- Visualizador de CSS -->
+    <div class="visualizador-css">
+        <h2>Visualizador de CSS</h2>
+        <pre id="css-visualizer"><code></code></pre>
+    </div>
+  </section>
+</body>
+<script>
+  fetch('styles.css')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('css-visualizer').textContent = data;
+    })
+    .catch(error => console.error('Error cargando el archivo CSS:', error));
+  </script>
+</html>

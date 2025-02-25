@@ -1,0 +1,157 @@
+/* Definición de variables en :root */
+:root {
+    /* Colores principales */
+    --color-primary: #3498db;
+    --color-secondary: #2ecc71;
+    --color-accent: #e74c3c;
+    --color-background: #f9f9f9;
+    --color-text: #333;
+    --color-light: #fff;
+    --color-dark: #34495e;
+  
+    /* Espaciado */
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 40px;
+  
+    /* Bordes */
+    --border-radius: 8px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: var(--spacing-medium);
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+  
+  h1, h2, h3 {
+    color: var(--color-dark);
+  }
+  
+  section {
+    margin-bottom: var(--spacing-large);
+    padding: var(--spacing-medium);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 1. Grid vs Flexbox */
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e0e0e0;
+    padding: var(--spacing-small);
+    border-radius: var(--border-radius);
+  }
+  
+  .flex-item {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: var(--spacing-medium);
+    margin: var(--spacing-small);
+    border-radius: var(--border-radius);
+    text-align: center;
+    flex: 1;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-small);
+    background-color: #e0e0e0;
+    padding: var(--spacing-small);
+    border-radius: var(--border-radius);
+  }
+  
+  .grid-item {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    padding: var(--spacing-medium);
+    text-align: center;
+    border-radius: var(--border-radius);
+  }
+  
+
+  /* 2. Uso de <section> */
+  .section-usage {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+  }
+  
+
+  /* 3. Variables CSS */
+  .variable-example {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+  }
+
+  
+  /* 4. Selectores avanzados */
+  .parent > p {
+    color: var(--color-accent);
+  }
+  
+  .parent p {
+    font-style: italic;
+  }
+
+  
+  /* 5. Animaciones con @keyframes */
+  @keyframes slide-in {
+    0% {
+      transform: translateX(0) rotate(10deg) ;
+    }
+    30% {
+      transform: translateX(30%) rotate(40deg);
+    }
+    50% {
+      transform: translateX(50%) rotate(90deg) translateX(60px);
+    }
+    70% {
+      transform: translateX(70%) rotate(100deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(180deg);
+    }
+  }
+  
+  .animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-secondary);
+    animation: slide-in 3s linear infinite;
+  }
+  
+
+  /* 6. Pseudoelementos ::before y ::after */
+  .pseudo-example {
+    position: relative;
+    padding: var(--spacing-medium);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border-radius: var(--border-radius);
+  }
+  
+  .pseudo-example::before {
+    content: "★";
+    position: absolute;
+    left: var(--spacing-small);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .pseudo-example::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-accent);
+  }
