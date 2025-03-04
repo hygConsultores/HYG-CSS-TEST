@@ -75,6 +75,33 @@
     border-radius: var(--border-radius);
   }
 
+  /* Estilos para el div de Grid con Overflow Horizontal */
+  .div-grid-overflow {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .grid-overflow-container {
+    display: grid;
+    grid-template-columns: repeat(10, 200px); /* 10 columnas de 200px cada una */
+    gap: 10px;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .grid-overflow-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 18px;
+  }
 
   /* 2. Uso de <section> */
   .section-usage {
