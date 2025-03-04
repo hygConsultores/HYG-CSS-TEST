@@ -92,7 +92,7 @@
   }
 
 
-  /* 4. Selectores avanzados */
+  /* 4. Selectores */
   .parent > p {
     color: var(--color-accent);
   }
@@ -109,9 +109,6 @@
     }
     30% {
       transform: translateX(30%) rotate(40deg);
-    }
-    50% {
-      transform: translateX(50%) rotate(90deg) translateX(60px);
     }
     70% {
       transform: translateX(70%) rotate(100deg);
@@ -182,11 +179,102 @@
   }
 }
 
+.container {
+  display: grid;
+  grid-template-rows: 80px auto 1fr auto 50px; /* Filas */
+  grid-template-columns: 1fr 4fr 1fr; /* Columnas */
+  grid-template-areas:
+    "header       header       header"
+    "left-scale   banner       right-scale"
+    "left-scale   main-content right-scale"
+    "low-content  low-content  low-content"
+    "footer       footer       footer";
+  gap: 20px;
+  padding: 30px;
+  height: 100vh;
+  font-weight:  600;
+}
+
+/* Estilos para cada área */
+.header {
+  grid-area: header;
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.left-scale {
+  grid-area: left-scale;
+  background-color: var(--color-secondary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner {
+  grid-area: banner;
+  background-color: var(--color-accent);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.right-scale {
+  grid-area: right-scale;
+  background-color: #9b59b6;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.main-content {
+  grid-area: main-content;
+  background-color: #f1c40f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.low-content {
+  grid-area: low-content;
+  background-color: #34495e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #e67e22;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-rows: 50px 50px 50px 1fr 50px 50px 50px; /* Filas para móvil */
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-areas:
+      "header"
+      "banner"
+      "left-scale"
+      "main-content"
+      "right-scale"
+      "low-content"
+      "footer";
+  }
+}
+
 
 /* 9. Clases Jerarquizadas */
-.parent-class .child-class {
-  color: var(--color-accent);
-  font-weight: bold;
+.parent-class{
+  & .child-class {
+    color: var(--color-accent);
+    font-weight: bold;
+  }
 }
 
 
